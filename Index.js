@@ -58,3 +58,120 @@ function loginHandler(username,password,clbk){
 }
 loginHandler("ptomer4","12345",login)
 
+
+// console.log("one")
+// // for( i=1;i<100000;i++){  // sync
+// //      console.log("two")
+// // }
+// setTimeout(()=>{           //asyn
+//     console.log("two")
+// },1000)
+
+
+
+// console.log("three")
+
+
+// setTimeout(() => {
+//     console.log("one");
+
+//     setTimeout(() => {
+//         console.log("two");
+
+//         setTimeout(() => {
+//             console.log("three");
+
+//             setTimeout(() => {
+//                 console.log("four");
+
+//                  setTimeout(() => {
+//                 console.log("five");
+
+//                     setTimeout(() => {
+//                 console.log("six");
+//                  }, 1000);
+
+//               }, 1000);
+
+//             }, 1000);
+
+//         }, 1000);
+
+//     }, 1000);
+
+// }, 1000);
+
+
+
+
+
+
+
+const myPromise = new Promise((resolve, reject) => {
+    const username = "ptomer40";
+    const password = "12345";
+
+    if (username === "ptomer40" && password === "12345") {
+        resolve("Success");
+    } else {
+        reject("Username or password incorrect");
+    }
+});
+
+
+
+// myPromise.then((msg)=>{
+//     console.log(msg)
+// }).catch((msg)=>{
+//     console.log(msg)
+// }).finally(()=>{
+//     console.log("all done")
+// })
+
+
+async function handleData() {
+    try {
+        console.log("hiiii");
+
+        const msg = await myPromise;
+        console.log(msg);
+
+        console.log("hello");
+    } catch (err) {
+        console.log(err);
+    } finally {
+        console.log("All done");
+    }
+}
+
+handleData();
+
+
+const orderPromise = new Promise((resolve, reject) => {
+    const paymentSuccessful = true; 
+
+    if (paymentSuccessful) {
+        resolve("Order Accepted");
+    } else {
+        reject(" Order Declined");
+    }
+});
+
+async function placeOrder() {
+    try {
+        const message = await orderPromise;
+        console.log(message);
+        console.log("Preparing your order...");
+    } catch (error) {
+        console.log(error);
+        console.log("Please try placing the order again.");
+    } finally {
+        console.log("Thank you for shopping with us!");
+    }
+}
+
+placeOrder();
+
+
+
+
