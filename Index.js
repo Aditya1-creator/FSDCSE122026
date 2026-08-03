@@ -287,11 +287,13 @@ loginHandler("ptomer4","12345",login)
 
 
 const button=document.getElementById('btn');
+const container=document.getElementById('container');
 console.log(button)
 async function fetchData(){
    const serverData= await fetch('https://fakestoreapi.com/products')
     const jsonData=await serverData.json();
-   console.log(jsonData)
+   // console.log(jsonData)
+   container.innerHTML=`JSON.stringify(${jsonData})`
 }
 button.addEventListener('click',fetchData)
 fetchData();
