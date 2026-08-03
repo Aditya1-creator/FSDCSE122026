@@ -107,71 +107,191 @@ loginHandler("ptomer4","12345",login)
 
 
 
-const myPromise = new Promise((resolve, reject) => {
-    const username = "ptomer40";
-    const password = "12345";
+// const myPromise = new Promise((resolve, reject) => {
+//     const username = "ptomer40";
+//     const password = "12345";
 
-    if (username === "ptomer40" && password === "12345") {
-        resolve("Success");
-    } else {
-        reject("Username or password incorrect");
-    }
-});
-
-
-
-// myPromise.then((msg)=>{
-//     console.log(msg)
-// }).catch((msg)=>{
-//     console.log(msg)
-// }).finally(()=>{
-//     console.log("all done")
-// })
+//     if (username === "ptomer40" && password === "12345") {
+//         resolve("Success");
+//     } else {
+//         reject("Username or password incorrect");
+//     }
+// });
 
 
-async function handleData() {
-    try {
-        console.log("hiiii");
 
-        const msg = await myPromise;
-        console.log(msg);
+// // myPromise.then((msg)=>{
+// //     console.log(msg)
+// // }).catch((msg)=>{
+// //     console.log(msg)
+// // }).finally(()=>{
+// //     console.log("all done")
+// // })
 
-        console.log("hello");
-    } catch (err) {
-        console.log(err);
-    } finally {
-        console.log("All done");
-    }
+
+// async function handleData() {
+//     try {
+//         console.log("hiiii");
+
+//         const msg = await myPromise;
+//         console.log(msg);
+
+//         console.log("hello");
+//     } catch (err) {
+//         console.log(err);
+//     } finally {
+//         console.log("All done");
+//     }
+// }
+
+// handleData();
+
+
+// const orderPromise = new Promise((resolve, reject) => {
+//     const paymentSuccessful = true; 
+
+//     if (paymentSuccessful) {
+//         resolve("Order Accepted");
+//     } else {
+//         reject(" Order Declined");
+//     }
+// });
+
+
+// const orderrecieve = new Promise((resolve, reject) => {
+//     resolve("Order Accepted");
+// });
+
+// async function handleData() {
+//     try {
+//         const msg = await myPromise;
+
+//         if (msg === "Success") {
+//             const orderStatus = await orderrecieve;
+//             console.log(orderStatus);
+//         }
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+
+// handleData();
+
+// async function placeOrder() {
+//     try {
+//         const message = await orderPromise;
+//         console.log(message);
+//         console.log("Preparing your order...");
+//     } catch (error) {
+//         console.log(error);
+//         console.log("Please try placing the order again.");
+//     } finally {
+//         console.log("Thank you for shopping with us!");
+//     }
+// }
+
+// placeOrder();
+
+
+// function orderRecieve() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Order received");
+//         }, 1000);
+//     });
+// }
+
+// async function orderHandler(){
+//     try{
+//     const status=await orderRecieve();
+//     console.log(status)
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
+// orderHandler();
+
+
+
+
+// orderRecieve()
+//     .then((msg) => {
+//         console.log(msg);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     })
+//     .finally(() => {
+//         console.log("Finally done");
+//     });
+
+// function orderRecieve() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Order received");
+//         }, 1000);
+//     });
+// }
+
+// async function orderHandler(){
+//     try{
+//     const status=await orderRecieve();
+//     console.log(status)
+//     }catch(err){
+//         console.log(err)
+//     }
+// }
+
+// orderHandler();
+
+// function orderPrepared() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Order prepared");
+//         }, 1000);
+//     });
+// }
+
+
+// function orderDispatched() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Order dispatched");
+//         }, 1000);
+//     });
+// }
+
+// function orderDelivered() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Order delivered");
+//         }, 1000);
+//     });
+// }
+
+// async function orderHandler() {
+//     try {
+//         console.log(await orderRecieve());
+//         console.log(await orderPrepared());
+//         console.log(await orderDispatched());
+//         console.log(await orderDelivered());
+
+//         console.log("Thank you for shopping with us!");
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+
+// orderHandler();
+
+
+
+const button=document.getElementById('btn');
+console.log(button)
+async function fetchData(){
+   const serverData= await fetch('https://fakestoreapi.com/products')
+    const jsonData=await serverData.json();
+   console.log(jsonData)
 }
-
-handleData();
-
-
-const orderPromise = new Promise((resolve, reject) => {
-    const paymentSuccessful = true; 
-
-    if (paymentSuccessful) {
-        resolve("Order Accepted");
-    } else {
-        reject(" Order Declined");
-    }
-});
-
-async function placeOrder() {
-    try {
-        const message = await orderPromise;
-        console.log(message);
-        console.log("Preparing your order...");
-    } catch (error) {
-        console.log(error);
-        console.log("Please try placing the order again.");
-    } finally {
-        console.log("Thank you for shopping with us!");
-    }
-}
-
-placeOrder();
-
-
-
-
+button.addEventListener('click',fetchData)
+fetchData();
