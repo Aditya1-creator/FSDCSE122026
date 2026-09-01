@@ -6,16 +6,14 @@ import './App.css'
 
 import './App.css'
 import ICard from './component/ICard'
+import Gallery from './component/Gallery'
 
 function App() {
 
 
   return (
     <div>
-      <ICard/>
-      <ICard/>
-      <ICard/>
-      <ICard/>
+     <Gallery />
     </div>
   )
 }
