@@ -8,12 +8,18 @@ import './App.css'
 import ICard from './component/ICard'
 import Gallery from './component/Gallery'
 
+import Imagemanipulation from './component/Imagemanipulation'
+import UseEffect from './component/UseEffect'
+
+
 function App() {
 
 
   return (
     <div>
-     <Gallery />
+     {/* <Gallery /> */}
+     {/* <Imagemanipulation /> */}
+     <UseEffect/>
     </div>
   )
 }
